@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #005c96;
+  }
+  #container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .box {
+    position: fixed;
+    background-position: center;
+    background-size: 120px 80px;
+    background-repeat: no-repeat;
+    transition: top 1s ease-in-out, left 1s ease-in-out;
+    border: 1px white solid;
+    border-bottom-color: #00af70;
+    border-top-color: #00af70;
+    border-top-color: none;
+    border-left-color: #005c96;
+    border-right-color: #005c96;
+  }
+
+  .reset {
+    padding: 12px 30px 15px;
+    border: none;
+    background-color: #00af70;
+    color: #fff;
+    font-size: 16px;
+    position: fixed;
+    bottom: 10px;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .result {
+    background: #00af70;
+    opacity: 0;
+    top: 25%;
+    z-index: 2;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    height: 60%;
+    width: 50%;
+  }
+  img.result {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    height: 80%;
+    bottom: 10%;
+    top: 10%;
+    width: 90%;
+  }
