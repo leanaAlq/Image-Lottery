@@ -1,6 +1,8 @@
 # Image-Lottery
 100 image lottery web page
 
+[View Page](https://leanaalq.github.io/Image-Lottery/)
+
 ## Description
 applying shuffle effect to 100 images then picking a random image from them as the winner image.
 
