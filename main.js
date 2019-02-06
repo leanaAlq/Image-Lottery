@@ -1,17 +1,13 @@
-// this code is a reult of modifying the shuffle image example from [link]
-
+// this code is a result of modifying the shuffle image example from [https://codepen.io/FlorinPop17/pen/MEYrJW]
 
 var total = 100;
-let rand = Math.floor(Math.random() * total)+1;
 const cnt = document.getElementById("container");
 const reset = document.querySelector(".reset");
-//   const img = "https://picsum.photos/500/80/?random";
 var arr = [];
 const n = Math.sqrt(total);
 const m = Math.sqrt(total);
 const pos = [];
 const shuffled = [];
-
 cnt.style.width = "100vw";
 cnt.style.height = "100vh";
 
@@ -25,7 +21,7 @@ for (let i = 0; i < n; i++) {
 }
 
 shuffle(shuffled);
-let num = 1;
+
 for (let i = 0; i < n; i++) {
   for (let j = 0; j < m; j++) {
     let box = document.createElement("div");
@@ -40,13 +36,11 @@ for (let i = 0; i < n; i++) {
     box.style.top = `${y}vh`;
     box.style.width = `${total / n}vw`;
     box.style.height = `${total / n}vh`;
-    //images here
-    console.log(num);
+
     // path to your small images folder (150 * 80 pixels)
-    // box.style.background = `url("small/IMG_${( num < 10)?('000'+num):('00'+num)}.jpg")`;
-    box.style.background = `url("https://picsum.photos/150/80/?image=1${num}")`;
-    // const img = "https://picsum.photos/150/80/?random"
-    num++;
+    // box.style.background = `url("small/IMG_${randomWinner()}.jpg")`;
+    box.style.background = `url("https://picsum.photos/150/80/?image=1${randomnumber()}")`;
+
     cnt.appendChild(box);
   }
 }
@@ -72,15 +66,29 @@ function shuffle(array) {
     array[j] = temp;
   }
 }
-//your original images path 
-// $("img.result").attr(
-//     "src", `images/IMG_${(rand<10) ?('000'+rand): ('00'+rand)}.jpg`);
-$("img.result").attr(
-    "src", `https://picsum.photos/500/350/?random
-    `);
-console.log($("img.result"));
+
+function randomWinner() {
+  let r = Math.floor(Math.random() * total) + 1;
+  return r < 10 ? "000" + r : "00" + r;
+}
+function randomnumber() {
+  return Math.floor(Math.random() * total) + 1;
+}
 reset.addEventListener("click", () => {
-  $(".result").animate({opacity:0}, 3000);
+  //your original images path
+  // $("img.result").attr(
+  //     "src", `images/IMG_${randomWinner()}.jpg`);
+  $("img.result").attr(
+    "src",
+    `https://picsum.photos/500/300/?image=1${randomnumber()}
+    `
+  );
+  $(".result").animate(
+    {
+      opacity: 0
+    },
+    100
+  );
   const boxes = document.querySelectorAll(".box");
   boxes.forEach((box, idx) => {
     box.style.left = `${pos[idx][0]}vw`;
@@ -95,8 +103,12 @@ reset.addEventListener("click", () => {
   }, 1500);
   $(document).ready(function() {
     setTimeout(() => {
-      $(".result").animate({ opacity: 1 }, 1500);
-      
+      $(".result").animate(
+        {
+          opacity: 1
+        },
+        1500
+      );
     }, 1500);
   });
 });
