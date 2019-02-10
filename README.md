@@ -20,7 +20,7 @@ box.style.background = `url("small/IMG_${randomWinner()}.jpg")`;
 ```
 ```
 $("img.result").attr(
-  //     "src", `images/IMG_${randomWinner()}.jpg`);
+ "src", `images/IMG_${randomWinner()}.jpg`);
 ```
 - comment/ delete these parts: 
 ```
